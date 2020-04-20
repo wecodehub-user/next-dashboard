@@ -1,42 +1,22 @@
 import * as React from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Header from './Header'
+import Navigation from './Navigation'
 
-type Props = {
-  title?: string
-}
+type Props = {}
 
-const Layout: React.FunctionComponent<Props> = ({
-  children,
-  title = 'This is the default title',
-}) => (
+const Layout: React.FunctionComponent<Props> = ({ children }) => (
   <div>
-    <Head>
-      <title>{title}</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <header>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/about">
-          <a>About</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/users">
-          <a>Users List</a>
-        </Link>{' '}
-        | <a href="/api/users">Users API</a>
-      </nav>
-    </header>
-    {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
+    <Header name='Company Name' />
+    <Container fluid={true}>
+      <Row>
+        <Navigation />
+        <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
+          {children}
+        </main>
+      </Row>
+  </Container>
   </div>
 )
 

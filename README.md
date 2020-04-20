@@ -18,4 +18,6 @@ Clone this repository and install all dependencies with `npm install`. Then cont
 
 ## Dependencies
 
-* [NextJS](https://nextjs.org)
+* [Next.js](https://nextjs.org)
+* [React Bootstrap](https://react-bootstrap.github.io)
+* [React Feather Icons](https://github.com/feathericons/react-feather)
