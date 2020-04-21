@@ -5,7 +5,7 @@ import NavLink from 'react-bootstrap/NavLink'
 import { Home, List } from 'react-feather'
 
 const Navigation: React.FunctionComponent = () => {
-    let router = useRouter()
+    const router = useRouter()
     return (
         <Nav className="col-md-2 d-none d-md-block bg-light sidebar">
             <div className="sidebar-sticky">

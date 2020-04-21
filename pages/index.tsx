@@ -1,4 +1,6 @@
 import Layout from '../components/Layout'
+import { handleAuthentication } from '../utils/authentication'
+import { NextPageContext } from 'next'
 
 const IndexPage = () => (
   <Layout>
@@ -17,5 +19,10 @@ const IndexPage = () => (
     </div>
   </Layout>
 )
+
+IndexPage.getInitialProps = async (ctx: NextPageContext) => {
+  await handleAuthentication(ctx);
+  return {}
+}
 
 export default IndexPage
